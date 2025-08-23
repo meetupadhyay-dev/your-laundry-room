@@ -1,71 +1,96 @@
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown } from "lucide-react";
 
 const faqs = [
   {
-    question: "What could possibly be your first question?",
+    id: 1,
+    question: "How can I get started?",
     answer:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione."
+      "Getting started is easy! Sign up for an account, and you'll have access to our platform's features. No credit card required for the initial signup.",
   },
   {
-    question: "How does this FAQ component work?",
+    id: 2,
+    question: "What is the pricing structure?",
     answer:
-      "This FAQ component is fully responsive and dynamic. You can easily add or remove FAQs by editing the array of questions and answers."
+      "Our pricing structure is flexible. We offer both free and paid plans. You can choose the one that suits your needs and budget.",
   },
   {
-    question: "Can I customize the styling?",
+    id: 3,
+    question: "What kind of support do you provide?",
     answer:
-      "Yes, it's built with Tailwind CSS, so you can easily customize colors, spacing, and layouts as per your design requirements."
-  }
+      "We offer comprehensive customer support. You can reach out to our support team through various channels, including email, chat, and a knowledge base.",
+  },
+  {
+    id: 4,
+    question: "Can I cancel my subscription anytime?",
+    answer:
+      "Yes, you can cancel your subscription at any time without any hidden fees. We believe in providing a hassle-free experience for our users.",
+  },
 ];
 
 const FAQ = () => {
-  const [openIndex, setOpenIndex] = useState(null);
+  const [openId, setOpenId] = useState(null);
 
-  const toggleFAQ = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
+  const toggleFAQ = (id) => {
+    setOpenId(openId === id ? null : id);
   };
 
   return (
-    <div className="py-12 bg-white">
-      <div className="max-w-screen-md mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center">
-          <p className="mt-4 text-sm leading-7 text-gray-500">F.A.Q</p>
-          <h3 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">
-            Frequently Asked <span className="text-indigo-600">Questions</span>
-          </h3>
+    <section className="py-10 bg-gray-50 sm:py-16 lg:py-24">
+      <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+        <div className="max-w-2xl mx-auto text-center">
+          <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
+            Explore Common Questions
+          </h2>
         </div>
 
-        {/* FAQ List */}
-        <div className="mt-12 space-y-6">
-          {faqs.map((faq, index) => (
-            <div key={index} className="border rounded-lg shadow-sm">
-              {/* Question */}
+        <div className="max-w-3xl mx-auto mt-8 space-y-4 md:mt-16">
+          {faqs.map((faq) => (
+            <div
+              key={faq.id}
+              className="transition-all duration-200 bg-white border border-gray-200 shadow-lg hover:bg-gray-50 rounded-xl"
+            >
               <button
-                className="w-full flex justify-between items-center p-5 text-left text-gray-900 font-medium hover:bg-gray-50"
-                onClick={() => toggleFAQ(index)}
+                onClick={() => toggleFAQ(faq.id)}
+                className="flex items-center justify-between w-full px-4 py-5 sm:p-6"
               >
-                {faq.question}
-                <span
-                  className={`transform transition-transform ${
-                    openIndex === index ? "rotate-180" : ""
-                  }`}
-                >
-                  ▼
+                <span className="flex text-lg font-semibold text-black">
+                  {faq.question}
                 </span>
+                <motion.div
+                  animate={{ rotate: openId === faq.id ? 180 : 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <ChevronDown className="w-6 h-6 text-gray-400" />
+                </motion.div>
               </button>
 
-              {/* Answer */}
-              {openIndex === index && (
-                <div className="p-5 bg-gray-50 text-gray-700 text-sm border-t">
-                  {faq.answer}
-                </div>
-              )}
+              <AnimatePresence>
+                {openId === faq.id && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="px-4 pb-5 sm:px-6 sm:pb-6"
+                  >
+                    <p className="text-gray-600">{faq.answer}</p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           ))}
         </div>
+
+        <p className="text-center text-gray-600 text-base mt-9">
+          Still have questions?{" "}
+          <span className="cursor-pointer font-medium text-blue-600 transition-all duration-200 hover:underline">
+            Contact our support
+          </span>
+        </p>
       </div>
-    </div>
+    </section>
   );
 };
 
