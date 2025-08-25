@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { IoChevronForward } from "react-icons/io5";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter, FaYoutube } from "react-icons/fa";
 import { Your_Laundry } from "../../../assets/logo";
+import { Link } from "react-router-dom";
 
 const Header = ({ backgroundImage, backgroundVideo, titleLines = [], ctaText = "Join Now", ctaNote }) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -54,16 +55,17 @@ const Header = ({ backgroundImage, backgroundVideo, titleLines = [], ctaText = "
           >
             <nav>
               <ul className="md:flex items-center justify-between text-base text-gray-200 pt-4 md:pt-0">
-                <li><a className="md:p-4 py-3 block" href="/">Home</a></li>
-                <li><a className="md:p-4 py-3 block" href="/services">Services</a></li>
-                <li><a className="md:p-4 py-3 block" href="/about">About Us</a></li>
-                <li><a className="md:p-4 py-3 block" href="/contact">Contact</a></li>
+                <li><Link className="md:p-4 py-3 block hover:text-[#00b4d8] font-bold text-lg" to="/">Home</Link></li>
+                <li><Link className="md:p-4 py-3 block hover:text-[#00b4d8] font-bold text-lg" to="/about">About Us</Link></li>
+                <li><Link className="md:p-4 py-3 block hover:text-[#00b4d8] font-bold text-lg" to="/services">Services</Link></li>
+                <li><Link className="md:p-4 py-3 block hover:text-[#00b4d8] font-bold text-lg" to="/pricing">Pricing</Link></li>
+                <li><Link className="md:p-4 py-3 block hover:text-[#00b4d8] font-bold text-lg" to="/contact">Contact</Link></li>
                 <li className="flex gap-2 mt-2 md:mt-0">
-                  <button className="px-4 py-2 rounded-md bg-[#00b4d8] text-white font-semibold hover:bg-green-600">
+                  {/* <button className="px-4 py-2 rounded-md bg-[#00b4d8] text-white font-semibold hover:bg-green-600">
                     Call
-                  </button>
-                  <button className="px-4 py-2 rounded-md bg-white text-[#00b4d8] font-semibold hover:bg-gray-200">
-                    Schedule
+                  </button> */}
+                  <button className=" text-lg px-4 py-2 rounded-md bg-[#00b4d8] text-white font-semibold hover:bg-white hover:text-[#00b4d8] hover:cursor-pointer">
+                    Schedule Pickup
                   </button>
                 </li>
               </ul>
@@ -102,11 +104,11 @@ const Header = ({ backgroundImage, backgroundVideo, titleLines = [], ctaText = "
 
           {/* Social Icons */}
           <div className="flex flex-col gap-2 items-center text-2xl text-white mt-6">
-            <a href="#" className="w-9 h-9 rounded-full bg-black/40 hover:bg-black/80 flex justify-center items-center"><FaTwitter /></a>
-            <a href="#" className="w-9 h-9 rounded-full bg-black/40 hover:bg-pink-800 flex justify-center items-center"><FaInstagram /></a>
-            <a href="#" className="w-9 h-9 rounded-full bg-black/40 hover:bg-sky-600 flex justify-center items-center"><FaLinkedinIn /></a>
-            <a href="#" className="w-9 h-9 rounded-full bg-black/40 hover:bg-rose-600 flex justify-center items-center"><FaYoutube /></a>
-            <a href="#" className="w-9 h-9 rounded-full bg-black/40 hover:bg-blue-600 flex justify-center items-center"><FaFacebookF /></a>
+            <Link to="#" className="w-9 h-9 rounded-full bg-black/40 hover:bg-black/80 flex justify-center items-center"><FaTwitter /></Link>
+            <Link to="#" className="w-9 h-9 rounded-full bg-black/40 hover:bg-pink-800 flex justify-center items-center"><FaInstagram /></Link>
+            <Link to="#" className="w-9 h-9 rounded-full bg-black/40 hover:bg-sky-600 flex justify-center items-center"><FaLinkedinIn /></Link>
+            <Link to="#" className="w-9 h-9 rounded-full bg-black/40 hover:bg-rose-600 flex justify-center items-center"><FaYoutube /></Link>
+            <Link to="#" className="w-9 h-9 rounded-full bg-black/40 hover:bg-blue-600 flex justify-center items-center"><FaFacebookF /></Link>
           </div>
         </div>
       </div>

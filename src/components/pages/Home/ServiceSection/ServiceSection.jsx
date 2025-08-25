@@ -9,6 +9,9 @@ import {
   shoeshine,
   steamIron,
 } from "../../../../assets/service/index";
+import { about_one } from "../../../../assets/hero";
+import { Link } from "react-router-dom";
+import {slide_two} from "../../../../assets/slides"
 
 const services = [
   {
@@ -61,56 +64,68 @@ const services = [
   },
 ];
 
+
 const ServiceSection = () => {
   return (
-    <section className="max-w-7xl mx-auto px-6 py-12">
-      {/* Heading */}
-      <div className="text-center mb-10">
-        <h1 className="font-bold text-4xl mb-2 text-[#0096c7]">Our Services</h1>
-        <p className="text-lg text-gray-600">
-          If You’re Still Scrolling, You Clearly Care About Clean. Let’s take it up a notch — from everyday laundry to stain rescues, bags, shoes, and more.
-        </p>
+    <section className="max-w-7xl mx-auto px-5 py-12">
+      
+      <h2 className="sm:text-6xl xs:text-5xl font-bold text-center mb-12 text-[#00b4d8]">
+        Services We Offer
+      </h2>
+
+      
+      <div className="flex flex-col md:flex-row items-stretch ">
+      
+        <div className="w-full md:w-1/2">
+          <img
+            src={about_one}
+            alt="Service"
+            className="w-full h-full object-cover shadow-md "
+          />
+        </div>
+
+     
+        <div className="bg-[#00b4d8] text-white w-full md:w-1/2 p-6 flex flex-col justify-center items-center text-center shadow-md ">
+          <img src={machine} alt="Laundry Machine" className="w-28 mb-4" />
+          <h3 className="text-xl font-semibold mb-2">Cloth Laundry</h3>
+          <p className="text-sm md:text-base leading-relaxed">
+            The automated process starts as soon as your clothes go into the
+            machine. The outcome is gleaming clothes!!
+          </p>
+        </div>
       </div>
 
-      {/* Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-10 justify-items-center">
-        {services.map((service) => (
-          <div
-            key={service.id}
-            className="relative w-72 h-[340px] rounded-2xl overflow-hidden shadow-lg bg-[#0096c7] group cursor-pointer"
-          >
-            {/* Image */}
-            <div className="h-52 w-full flex items-center justify-center overflow-hidden">
-              <img
-                src={service.image}
-                alt={service.title}
-                className="w-[50%] object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-            </div>
+      <div className="flex flex-col md:flex-row-reverse items-stretch mb-8">
+       
+        <div className="w-full md:w-1/2">
+          <img
+            src={slide_two}
+            alt="Service"
+            className="w-full h-full object-cover shadow-md "
+          />
+        </div>
 
-            {/* Title */}
-            <div className="absolute bottom-0 left-0 w-full bg-white/90 backdrop-blur-md p-4 text-center transition-all duration-500 group-hover:translate-y-[-70px]">
-              <h2 className="text-xl font-bold text-gray-900">
-                {service.title}
-              </h2>
-            </div>
-
-            {/* Hidden Description - Slides down on hover */}
-            <div className="absolute bottom-[-100%] left-0 w-full bg-white/95 backdrop-blur-md p-5 text-center transition-all duration-500 group-hover:bottom-0">
-              <h2 className="text-lg font-semibold text-gray-800 mb-2">
-                {service.title}
-              </h2>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                {service.desc}
-              </p>
-            </div>
-          </div>
-        ))}
+        <div className="bg-[#00b4d8] text-white w-full md:w-1/2 p-6 flex flex-col justify-center items-center text-center shadow-md ">
+          <img src={steamIron} alt="Laundry Machine" className="w-28 mb-4" />
+          <h3 className="text-xl font-semibold mb-2">Cloth Laundry</h3>
+          <p className="text-sm md:text-base leading-relaxed">
+            The automated process starts as soon as your clothes go into the
+            machine. The outcome is gleaming clothes!!
+          </p>
+        </div>
       </div>
-    </section>
+
+  
+      <div className="flex justify-center mt-10">
+        <Link to="/services">
+        <button className="px-6 py-3 bg-[#00b4d8] text-white font-semibold rounded-full shadow-lg hover:bg-[#0096c7] transition-all duration-300 hover:cursor-pointer">
+          Explore More Services
+        </button>
+      </Link>
+    </div>
+    </section >
+
   );
 };
 
 export default ServiceSection;
-
-

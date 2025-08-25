@@ -1,10 +1,11 @@
 import React from 'react'
-import { Hero, AboutSection, FAQ, Pricing, ServiceSection, WorkProcess, WhyChooseUs, PickupForm } from '../../components/pages/Home'
+import { Hero, AboutSection, PricingSection, ServiceSection, WorkProcess, WhyChooseUs, PickupForm, Features } from '../../components/pages/Home'
 
 import { Banner } from '../../components/shared'
 import HeroOne from '../../components/pages/Home/Hero/HeroOne'
 import Header from '../../components/shared/Header/Header'
 import { hero_one, hero_video } from '../../assets/hero'
+
 
 
 const Home = () => {
@@ -22,15 +23,15 @@ const Home = () => {
       ctaText="Schedule Pickup"
       ctaNote=""
     />
-    {/* <HeroOne /> */}
-      {/* <Hero /> */}
-      {/* <Banner /> */}
+
+
       <AboutSection />
-      <PickupForm />
-      <ServiceSection />
+      {/* <PickupForm /> */}
       <WorkProcess />
-      <Pricing />
-      <FAQ />
+      <ServiceSection />
+      <Features />
+      <PricingSection />
+      {/* <FAQ /> */}
       {/* <WhyChooseUs /> */}
     </>
   )

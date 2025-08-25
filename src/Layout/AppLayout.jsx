@@ -1,17 +1,20 @@
 import React from 'react'
-import { BrowserRouter, Route, Router, Routes } from 'react-router-dom'
-import Home from '../pages/Home/Home'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Home, About, Contact, Pricing, ScheduleForm, Services } from "../pages"
 import { Footer, Navbar } from '../components/shared'
-import Service from '../pages/Service/Service'
+
 
 const AppLayout = () => {
     return (
 
         <BrowserRouter>
-            {/* <Navbar /> */}
+          
             <Routes>
                 <Route path='/' element={<Home />} />
-                <Route path='/services' element={<Service />} />
+                <Route path='/services' element={<Services />} />
+                <Route path='/about' element={<About />} />
+                <Route path='/contact' element={<Contact />} />
+                <Route path='/pricing' element={<Pricing />} />
             </Routes>
             <Footer />
         </BrowserRouter>
