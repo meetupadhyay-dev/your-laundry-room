@@ -64,9 +64,12 @@ const Header = ({ backgroundImage, backgroundVideo, titleLines = [], ctaText = "
                   {/* <button className="px-4 py-2 rounded-md bg-[#00b4d8] text-white font-semibold hover:bg-green-600">
                     Call
                   </button> */}
-                  <button className=" text-lg px-4 py-2 rounded-md bg-[#417377] text-white font-semibold hover:bg-white hover:text-[#417377] hover:cursor-pointer">
-                    Schedule Pickup
-                  </button>
+                  <Link to="/pickup">
+                    <button className=" text-lg px-4 py-2 rounded-md bg-[#417377] text-white font-semibold hover:bg-white hover:text-[#417377] hover:cursor-pointer">
+                      Schedule Pickup
+                    </button>
+                  </Link>
+
                 </li>
               </ul>
             </nav>
