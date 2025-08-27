@@ -25,7 +25,7 @@ const AboutSection = () => {
             About us
           </span>
           <h2 className="my-4 font-bold  sm:text-6xl xs:text-5xl">
-            Your <span className="text-[#00b4d8]"> Laundry Room</span>
+            <span className="text-[#6e4040]">Your</span> <span className="text-[#417377]"> Laundry Room</span>
           </h2>
           <p className="text-gray-700 mb-4">
             The Most Trusted Laundry Service in Vadodara
@@ -54,7 +54,7 @@ const AboutSection = () => {
 
           {pathname == "/" && <Link
             to="/about"
-            className="inline-block px-6 py-3 bg-[#00b4d8] text-white font-medium rounded-lg shadow-md hover:bg-white hover:text-[#00b4d8] transition"
+            className="inline-block px-6 py-3 bg-[#417377] text-white font-medium rounded-lg shadow-md hover:bg-white hover:text-[#417377] transition"
           >
             Read More
           </Link>}

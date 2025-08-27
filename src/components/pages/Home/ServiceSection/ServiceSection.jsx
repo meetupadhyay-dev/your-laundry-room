@@ -85,7 +85,7 @@ const ServiceSection = () => {
         </div>
 
      
-        <div className="bg-[#00b4d8] text-white w-full md:w-1/2 p-6 flex flex-col justify-center items-center text-center shadow-md ">
+        <div className="bg-[#417377] text-white w-full md:w-1/2 p-6 flex flex-col justify-center items-center text-center shadow-md ">
           <img src={machine} alt="Laundry Machine" className="w-28 mb-4" />
           <h3 className="text-xl font-semibold mb-2">Cloth Laundry</h3>
           <p className="text-sm md:text-base leading-relaxed">
@@ -105,7 +105,7 @@ const ServiceSection = () => {
           />
         </div>
 
-        <div className="bg-[#00b4d8] text-white w-full md:w-1/2 p-6 flex flex-col justify-center items-center text-center shadow-md ">
+        <div className="bg-[#8D5C5B] text-white w-full md:w-1/2 p-6 flex flex-col justify-center items-center text-center shadow-md ">
           <img src={steamIron} alt="Laundry Machine" className="w-28 mb-4" />
           <h3 className="text-xl font-semibold mb-2">Cloth Laundry</h3>
           <p className="text-sm md:text-base leading-relaxed">

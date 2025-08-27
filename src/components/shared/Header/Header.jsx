@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { IoChevronForward } from "react-icons/io5";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter, FaYoutube } from "react-icons/fa";
-import { Your_Laundry } from "../../../assets/logo";
+import { Your_Laundry, Your_Laundry_Room } from "../../../assets/logo";
 import { Link } from "react-router-dom";
 
 const Header = ({ backgroundImage, backgroundVideo, titleLines = [], ctaText = "Join Now", ctaNote }) => {
@@ -29,14 +29,14 @@ const Header = ({ backgroundImage, backgroundVideo, titleLines = [], ctaText = "
       )}
 
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/50"></div>
+      <div className="absolute inset-0 bg-black/10"></div>
 
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col">
         {/* Navbar */}
         <header className="lg:px-16 px-4 flex flex-wrap items-center py-4 shadow-sm">
           <div className="flex-1 flex justify-between items-center">
-            <img src={Your_Laundry} alt="Your Laundry Room" width={250} />
+            <img src={Your_Laundry_Room} alt="Your Laundry Room" width={250} />
           </div>
 
           {/* Mobile Toggle */}
@@ -55,16 +55,16 @@ const Header = ({ backgroundImage, backgroundVideo, titleLines = [], ctaText = "
           >
             <nav>
               <ul className="md:flex items-center justify-between text-base text-gray-200 pt-4 md:pt-0">
-                <li><Link className="md:p-4 py-3 block hover:text-[#00b4d8] font-bold text-lg" to="/">Home</Link></li>
-                <li><Link className="md:p-4 py-3 block hover:text-[#00b4d8] font-bold text-lg" to="/about">About Us</Link></li>
-                <li><Link className="md:p-4 py-3 block hover:text-[#00b4d8] font-bold text-lg" to="/services">Services</Link></li>
-                <li><Link className="md:p-4 py-3 block hover:text-[#00b4d8] font-bold text-lg" to="/pricing">Pricing</Link></li>
-                <li><Link className="md:p-4 py-3 block hover:text-[#00b4d8] font-bold text-lg" to="/contact">Contact</Link></li>
+                <li><Link className="md:p-4 py-3 block hover:text-[#417377] font-bold text-lg" to="/">Home</Link></li>
+                <li><Link className="md:p-4 py-3 block hover:text-[#417377] font-bold text-lg" to="/about">About Us</Link></li>
+                <li><Link className="md:p-4 py-3 block hover:text-[#417377] font-bold text-lg" to="/services">Services</Link></li>
+                <li><Link className="md:p-4 py-3 block hover:text-[#417377] font-bold text-lg" to="/pricing">Pricing</Link></li>
+                <li><Link className="md:p-4 py-3 block hover:text-[#417377] font-bold text-lg" to="/contact">Contact</Link></li>
                 <li className="flex gap-2 mt-2 md:mt-0">
                   {/* <button className="px-4 py-2 rounded-md bg-[#00b4d8] text-white font-semibold hover:bg-green-600">
                     Call
                   </button> */}
-                  <button className=" text-lg px-4 py-2 rounded-md bg-[#00b4d8] text-white font-semibold hover:bg-white hover:text-[#00b4d8] hover:cursor-pointer">
+                  <button className=" text-lg px-4 py-2 rounded-md bg-[#417377] text-white font-semibold hover:bg-white hover:text-[#417377] hover:cursor-pointer">
                     Schedule Pickup
                   </button>
                 </li>
