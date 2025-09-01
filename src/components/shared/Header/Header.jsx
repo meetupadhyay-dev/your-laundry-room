@@ -29,7 +29,7 @@ const Header = ({ backgroundImage, backgroundVideo, titleLines = [], ctaText = "
       )}
 
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/10"></div>
+      <div className="absolute inset-0 bg-black/65"></div>
 
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col">
